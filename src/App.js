@@ -16,7 +16,10 @@ class App extends Component {
 
   render() {
     return (
-      <SearchBar />
+      <div>
+        <h1 className="text-muted">Hello World</h1>
+        <SearchBar />
+      </div>
     );
   }
 }

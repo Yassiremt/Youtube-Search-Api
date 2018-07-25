@@ -6,7 +6,7 @@ const VideoList = ({videos,onVideoSelect})=>{
     const Lvideos = videos.map(v => <VideoItem video={v} key={v.etag} onVideoSelect={onVideoSelect} />)
 
   return (
-    <ul className="col-md-4 list-group">
+    <ul className="col-md-4 mt-4 list-group">
       {Lvideos}
     </ul>
 );

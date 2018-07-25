@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
 import './App.css';
+import YTSearch from 'youtube-api-search';
 import SearchBar from './Components/search_bar';
-import YTSearch from 'youtube-api-search'
+import VideoList from './Components/video_list';
+import VideoDetail from './Components/video_detail';
+
 
 const apiKey="AIzaSyBPnZq0T_BDvZxJM340rcEbdV4tUwhjIno";
 class App extends Component {
   constructor(props){
     super(props);
-    this.state={videos:[]};
-    YTSearch({key: apiKey,term: 'inna'}, videos=> {
-      this.setState=({videos});
-    });
+    this.state={
+      videos:[] ,
+      selectedVideo:null
+    };
+
+    YTSearch({key: apiKey,term: 'inna'}, videos=>
+    this.setState({
+      videos:videos,
+      selectedVideo:videos[0]
+    }));
+
   }
 
 
   render() {
     return (
       <div>
-        <h1 className="text-muted">Hello World</h1>
         <SearchBar />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+           videos={this.state.videos}
+           onVideoSelect={selectedVideo=>this.setState({selectedVideo})}
+         />
       </div>
     );
   }

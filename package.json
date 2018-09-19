@@ -2,7 +2,7 @@
   "name": "Youtube-Search-Api",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yassiremt.github.io/pf",
+  "homepage": "https://yassiremt.github.io/Youtube-Search-Api",
   "dependencies": {
     "bootstrap": "^4.1.1",
     "gh-pages": "^2.0.0",
